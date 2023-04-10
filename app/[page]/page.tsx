@@ -34,7 +34,7 @@ async function getPage(siteId: string, slug: string) {
 }
 
 export async function getCategories(parentId: string) {
-  const res = await fetch(`https://criscms.vercel.app/api/portfolio/categories0/parentId/${parentId}`, {method : "GET", cache: 'force-cache'});
+  const res = await fetch(`https://criscms.vercel.app/api/portfolio/categories0/parentId/${parentId}`, {method : "GET", cache: 'force-cache', mode: 'cors',});
   if (!res.ok) {
     console.log('error');
   }
