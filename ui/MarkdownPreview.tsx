@@ -1,3 +1,4 @@
+'use client'
 /* eslint-disable react/no-children-prop */
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import ReactMarkdown from 'react-markdown';
