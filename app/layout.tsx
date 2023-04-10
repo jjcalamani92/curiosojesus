@@ -14,12 +14,12 @@ export default function RootLayout({
         <title>Curioso Jesus</title>
       </head>
       <body className="">
-        <QueryProvider >
+        {/* <QueryProvider > */}
 
           <Header />
 
           {children}
-        </QueryProvider>
+        {/* </QueryProvider> */}
       </body>
     </html>
   );
