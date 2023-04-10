@@ -1,3 +1,5 @@
+export const revalidate = 60
+
 import ListBlogCategory from '@/ui/ListBlogCategory';
 import React from 'react'
 
