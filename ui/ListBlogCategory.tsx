@@ -6,13 +6,12 @@ import Link from 'next/link'
 
 import { useRouter, usePathname } from 'next/navigation';
 interface Props {
-  page: Page
-  categories: Category[]
+  page: Page | Category
 }
-export default function ListBlogCategory({page, categories}: Props) {
-  const { data:{name, description}, _id} = page
+export default function ListBlogCategory({ page }: Props) {
+  const { data:{name, description}, _id, categories} = page
   const pathname = usePathname()
-  const { data } = useGetCategories0ByParentId(_id, categories)
+  const { data } = useGetCategories0ByParentId(_id, categories!)
   // console.log('data', data)
   return (
     
@@ -41,7 +40,7 @@ export default function ListBlogCategory({page, categories}: Props) {
             {category.data.description}
              
             </p>
-            <Link className="inline-block" href={`/${pathname}/${category?.slug}`}>
+            <Link className="inline-block" href={`${pathname}/${category?.slug}`}>
               <span className="text-primary">See More</span>
             </Link>
           </div>
