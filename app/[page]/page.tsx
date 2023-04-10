@@ -34,7 +34,7 @@ async function getPage(siteId: string, slug: string) {
 }
 
  async function getCategories(parentId: string) {
-  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/categories0/parentId/${parentId}`, {method : "GET", cache: 'force-cache', });
+  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/categories0/parentId/${parentId}`, {method : "GET", cache: 'no-store', });
   if (!res.ok) {
     console.log('error');
   }
