@@ -1,15 +1,19 @@
 'use client'
+import { useGetCategories0ByParentId } from '@/src/hooks/useCategory0';
 import { Category } from '@/src/interfaces/category'
+import { Page } from '@/src/interfaces/page';
 import Link from 'next/link'
 
 import { useRouter, usePathname } from 'next/navigation';
 interface Props {
-  name: string
-  description: string
+  page: Page
   categories: Category[]
 }
-export default function ListBlogCategory({name, description, categories}: Props) {
+export default function ListBlogCategory({page, categories}: Props) {
+  const { data:{name, description}, _id} = page
   const pathname = usePathname()
+  const { data } = useGetCategories0ByParentId(_id, categories)
+  console.log('data', data)
   return (
     
     <div  className="py-12">

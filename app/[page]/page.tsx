@@ -33,8 +33,8 @@ async function getPage(siteId: string, slug: string) {
   return res.json();
 }
 
-async function getCategories(parentId: string) {
-  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/categories0/parentId/${parentId}`, {method : "GET", cache: 'force-cache'});
+export async function getCategories(parentId: string) {
+  const res = await fetch(`https://criscms.vercel.app/api/portfolio/categories0/parentId/${parentId}`, {method : "GET", cache: 'force-cache'});
   if (!res.ok) {
     console.log('error');
   }
@@ -54,6 +54,6 @@ export default async function Page(props: Props) {
   const categories = await getCategories(page._id)
   // console.log('categories', categories)
   return (
-    <ListBlogCategory name={page.data.name} description={page.data.description} categories={categories} />
+    <ListBlogCategory  page={page} categories={categories} />
   )
 }

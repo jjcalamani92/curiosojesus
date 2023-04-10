@@ -1,3 +1,4 @@
+import QueryProvider from '@/src/providers/QueryProvider';
 import '@/styles/globals.css';
 import Header from '@/ui/Header';
 import React from 'react';
@@ -13,8 +14,12 @@ export default function RootLayout({
         <title>Curioso Jesus</title>
       </head>
       <body className="">
-        <Header />
-        {children}
+        <QueryProvider >
+
+          <Header />
+
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
