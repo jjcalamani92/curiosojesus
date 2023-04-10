@@ -14,13 +14,12 @@
     "singleQuote": true
   },
   "dependencies": {
-    "clsx": "1.2.1",
-    "next": "latest",
+    "@headlessui/react": "1.7.13",
+    "@heroicons/react": "2.0.17",
+    "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "styled-components": "6.0.0-beta.2",
-    "styled-jsx": "5.1.0",
-    "use-count-up": "3.0.1"
+    "react-dom": "18.2.0"
+    
   },
   "devDependencies": {
     "@types/node": "18.0.3",
@@ -28,7 +27,7 @@
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.7",
     "eslint": "8.19.0",
-    "eslint-config-next": "latest",
+    "eslint-config-next": "13.2.4",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.12",
