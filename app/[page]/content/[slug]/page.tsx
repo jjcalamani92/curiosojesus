@@ -25,7 +25,7 @@ export async function generateStaticParams() {
   const pages = await getArticles()
   return pages.map((data: {slug: string}) => ({
     page: 'blog',
-    category0: data.slug,
+    slug: data.slug,
   }));
 }
 
