@@ -10,7 +10,7 @@ interface Props {
 }
 
 async function getPages() {
-  const res = await fetch('https://criscms.vercel.app/api/portfolio/pages/parentId/64301421b09f931344a4cb1b', {method : "GET"});
+  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/parentId/${process.env.SITE_UID}`, {method : "GET", cache: 'force-cache'});
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -52,7 +52,7 @@ export async function generateStaticParams() {
 export default async function Page(props: Props) {
   const page = await getPage(process.env.SITE_UID as string, props.params.page)
   const categories = await getCategories(page._id)
-  console.log('categories', categories)
+  // console.log('categories', categories)
   return (
     <ListBlogCategory name={page.data.name} description={page.data.description} categories={categories} />
   )
