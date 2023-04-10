@@ -10,7 +10,7 @@ interface Props {
 }
 
 async function getPages() {
-  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/parentId/${process.env.SITE_UID}`, {method : "GET", cache: 'force-cache'});
+  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/parentId/${process.env.SITE_UID}`, {method : "GET", cache: 'no-store'});
   if (!res.ok) {
     console.log('error');
     
@@ -20,7 +20,7 @@ async function getPages() {
 }
 
 async function getPage(siteId: string, slug: string) {
-  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/page/${siteId}/${slug}`, {method : "GET", cache: 'force-cache'});
+  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/page/${siteId}/${slug}`, {method : "GET", cache: 'no-store'});
   if (!res.ok) {
     console.log('error');
   }
@@ -44,7 +44,7 @@ export async function generateStaticParams() {
 
 export default async function Page(props: Props) {
   const page = await getPage(process.env.SITE_UID as string, props.params.page)
-  console.log('page', page)
+  // console.log('page', page)
   // const categories = await getCategories(page._id)
   // console.log('categories', categories)
   return (
