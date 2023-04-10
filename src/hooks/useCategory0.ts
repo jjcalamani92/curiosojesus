@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Category } from "../interfaces/category";
-import { getCategories } from "app/[page]/page";
+// import { getCategories } from "app/[page]/page";
 
 export const useGetCategories0ByParentId = (parentId: string, categories: Category[]) => {
   return useQuery<Category[]>({

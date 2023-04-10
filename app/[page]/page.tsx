@@ -33,7 +33,7 @@ async function getPage(siteId: string, slug: string) {
   return res.json();
 }
 
-export async function getCategories(parentId: string) {
+ async function getCategories(parentId: string) {
   const res = await fetch(`${process.env.SITE_URL}/api/portfolio/categories0/parentId/${parentId}`, {method : "GET", cache: 'force-cache', });
   if (!res.ok) {
     console.log('error');
