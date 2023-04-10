@@ -7,7 +7,7 @@ export const useGetCategories0ByParentId = (parentId: string, categories: Catego
     queryKey: [ `get-categories-0`, parentId],
     // queryFn: () => getCategories(parentId),
     queryFn: async () => {
-      const data = await fetch(`https://criscms.vercel.app/api/portfolio/categories0/parentId/${parentId}`, {mode: 'no-cors'})
+      const data = await fetch(`https://criscms.vercel.app/api/portfolio/categories0/parentId/${parentId}`, {mode: 'no-cors', cache: 'force-cache'})
       return data.json()
     },
     initialData: categories
