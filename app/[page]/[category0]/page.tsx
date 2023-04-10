@@ -36,8 +36,8 @@ export async function generateStaticParams() {
 
 export default async function Page(props: Props) {
   const category = await getCategory(process.env.SITE_UID as string, props.params.category0)
-  const categories = await getCategories()
-  // console.log('categories', categories)
+  // const categories = await getCategories()
+  // // console.log('categories', categories)
   return (
     <>
     {

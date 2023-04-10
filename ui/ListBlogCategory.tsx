@@ -11,7 +11,7 @@ interface Props {
 export default function ListBlogCategory({ page }: Props) {
   const { data:{name, description}, _id, categories} = page
   const pathname = usePathname()
-  const { data } = useGetCategories0ByParentId(_id, categories!)
+  // const { data } = useGetCategories0ByParentId(_id, categories!)
   // console.log('data', data)
   return (
     
@@ -25,7 +25,7 @@ export default function ListBlogCategory({ page }: Props) {
       </div>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {
-          data?.map((category, i) => (
+          categories?.map((category, i) => (
 
         <div key={i} className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
           <div className="relative overflow-hidden rounded-xl">
