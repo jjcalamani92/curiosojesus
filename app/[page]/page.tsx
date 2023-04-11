@@ -1,4 +1,5 @@
-export const dynamic = 'force/dynamic'
+export const dynamic = 'force-dynamic'
+export const revalidate = 60
 
 import ListBlogCategory from '@/ui/ListBlogCategory';
 import React from 'react'
