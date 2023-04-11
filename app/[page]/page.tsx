@@ -1,4 +1,4 @@
-export const revalidate = 10
+export const dynamic = 'force/dynamic'
 
 import ListBlogCategory from '@/ui/ListBlogCategory';
 import React from 'react'
@@ -10,7 +10,7 @@ interface Props {
 }
 
 async function getPages() {
-  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/parentId/${process.env.SITE_UID}`, {method : "GET", cache: 'no-store'});
+  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/parentId/${process.env.SITE_UID}`, {method : "GET",});
   if (!res.ok) {
     console.log('error');
     
@@ -20,7 +20,7 @@ async function getPages() {
 }
 
 async function getPage(siteId: string, slug: string) {
-  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/page/${siteId}/${slug}`, {method : "GET", cache: 'no-store'});
+  const res = await fetch(`${process.env.SITE_URL}/api/portfolio/pages/page/${siteId}/${slug}`, {method : "GET", });
   if (!res.ok) {
     console.log('error');
   }
