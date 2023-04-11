@@ -1,6 +1,8 @@
 import QueryProvider from '@/src/providers/QueryProvider';
+import ThemeNextProvider from '@/src/providers/ThemeNextProvider';
 import '@/styles/globals.css';
 import Header from '@/ui/Header';
+import { ThemeProvider } from 'next-themes';
 import React from 'react';
 
 export default function RootLayout({
@@ -14,12 +16,13 @@ export default function RootLayout({
         <title>Curioso Jesus</title>
       </head>
       <body className="">
-        {/* <QueryProvider > */}
+        
+          <ThemeNextProvider>
 
           <Header />
 
           {children}
-        {/* </QueryProvider> */}
+          </ThemeNextProvider>
       </body>
     </html>
   );
