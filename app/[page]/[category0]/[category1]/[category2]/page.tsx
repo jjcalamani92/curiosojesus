@@ -1,6 +1,6 @@
 import ListBlog from '@/ui/ListBlog';
 import ListBlogCategory from '@/ui/ListBlogCategory';
-import React from 'react'
+
 interface Props {
   params: {
     page: string
@@ -14,7 +14,6 @@ async function getCategories() {
   const res = await fetch(`${process.env.SITE_URL}/api/portfolio/categories2/siteId/${process.env.SITE_UID}`, {method : "GET", cache: 'no-store'});
   if (!res.ok) {
     console.log('error');
-    
   }
 
   return res.json();
@@ -39,7 +38,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page(props: Props) {
-  const category = await getCategory(process.env.SITE_UID as string, props.params.category1)
+  const category = await getCategory(process.env.SITE_UID as string, props.params.category2)
   // const categories = await getCategories()
   // // console.log('categories', categories)
   return (
